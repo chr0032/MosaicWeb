@@ -1,0 +1,17 @@
+다른 사람꺼 끌어오기
+
+1. clone any
+
+>> cd D:\03_Src\spring
+>> rm -rf MosaicWeb
+>> git clone http://github.com/webprotocols/MosaicWeb.git
+>> cd MosaicWeb
+>> git remote remove origin
+>> git remote add origin https://github.com/chr0032/MosaicWeb.git
+
+2. Remote Repository 생성
+>> name : MosaicWeb
+
+3. sync
+>> git push -u origin master
+ 

@@ -6,6 +6,8 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<default-servlet-handler/>
+
 	<!-- DispatcherServlet Context: defines this servlet's request-processing 
 		infrastructure -->
 
@@ -23,8 +25,9 @@
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
-
+	
 	<context:component-scan base-package="org.zerock.controller" />
+	<context:component-scan base-package="org.zerock.restcontroller" />
 
 	<!-- File Upload & Download 입력 관련 -->
 

@@ -252,9 +252,7 @@
 								<li class="user-header"><img
 									src="/resources/dist/img/user2-160x160.jpg" class="img-circle"
 									alt="User Image" />
-									<p>
-										Alexander Pierce - Web Developer <small>Member since
-											Nov. 2012</small>
+									<p>Alexander Pierce - Web Developer <small>Member since Nov. 2012</small>
 									</p></li>
 								<!-- Menu Body -->
 								<li class="user-body">
@@ -456,8 +454,8 @@
 		</aside>
 
 		<!-- Content Wrapper. Contains page content -->
-		<div class="content-wrapper">
-			<section class="content">
+		<div class="content-wrapper" style="border: 2px solid red;">
+			<section class="content" style="border: 2px solid blue;">
 				<!-- ################## -->
 				<!-- START Main Content -->
 				<!-- ################## -->
