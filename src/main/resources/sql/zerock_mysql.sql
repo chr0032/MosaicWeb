@@ -50,8 +50,6 @@ INSERT INTO tbl_user(UID, upw, uname)
      VALUES ('user03', 'user03', 'Thor');
 
 
-
-
 --
 -- tbl_board
 --

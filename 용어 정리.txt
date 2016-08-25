@@ -1,0 +1,9 @@
+
+1. UML (Unified Modeling Language)
+   - 객체지향 설명 모델 다이어그램
+   - 클래스간의 관계도 다이어그램으로 설명	 
+
+2. ERD (Entity Relation Diagram)
+   - 테이블 관계 다이어그램
+ 	
+

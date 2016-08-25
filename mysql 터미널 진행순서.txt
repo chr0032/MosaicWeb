@@ -1,0 +1,9 @@
+mysql 터미널 진행 순서
+
+1. mysql -u zerock -p -h ec2
+
+2. password 입력
+
+3. use world;
+
+4. source zerock_mysql.sql

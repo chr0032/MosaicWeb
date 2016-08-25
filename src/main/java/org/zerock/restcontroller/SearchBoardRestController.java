@@ -20,9 +20,9 @@ import org.zerock.service.BoardService;
 // jsp 제거 marshalling 작업 
 @RestController
 @RequestMapping("/rboard")
-public class SearchBoradRestController {
+public class SearchBoardRestController {
 
-	static Logger logger = LoggerFactory.getLogger(SearchBoradRestController.class);
+	static Logger logger = LoggerFactory.getLogger(SearchBoardRestController.class);
 
 	@Inject
 	BoardService service;
