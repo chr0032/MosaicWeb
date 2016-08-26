@@ -13,9 +13,8 @@
    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-   
   <h1>A.jsp</h1> 
-   
+<!--    수동 merge 해야함 ↓ -->
   <ul>
   	<li>spring mvc</li>
   	<li>myBatis</li>
