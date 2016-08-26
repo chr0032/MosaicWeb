@@ -452,20 +452,20 @@
 			</section>
 			<!-- /.sidebar -->
 		</aside>
-
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper" style="border: 2px solid red;">
 			<section class="content" style="border: 2px solid blue;">
 				<!-- ################## -->
 				<!-- START Main Content -->
 				<!-- ################## -->
+				<div class="container-fluid">
 				<sitemesh:write property="body" />
+				</div>
 				<!-- ################## -->
 				<!-- END   Main Content -->
 				<!-- ################## -->
 			</section>
 		</div>
-		
 		<footer class="main-footer">
 			<div class="pull-right hidden-xs">
 				<b>Version</b> 2.0

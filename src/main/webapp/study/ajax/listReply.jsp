@@ -12,6 +12,9 @@
 <!-- Font Awesome Icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
+<!-- Bootstrap 3.3.2 JS -->
+<script src="/resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
 </head>
 <body>
    <div class="panel panel-primary">
@@ -41,17 +44,35 @@
          </ul>
       </div>
    </div>
+   <div id="myModal" class="modal fade">
+   		<div class="modal-dialog">
+   				<div class="modal-content">
+   					<div class="modal-header">
+   						<h2 class="modal-title">댓글 수정 & 삭제</h2>
+   					</div>
+   					<div class="modal-body">
+   						<h2></h2>
+   					</div>
+   					<div class="modal-footer">
+   						<h2></h2>
+   					</div>
+   				</div>
+   		</div>
+   </div>
    <script id="mytemplate" type="text/x-handlebars-template">
       <ul class="list-group">
          {{#each .}}
-         <li class="list-group-item">
-            [{{rno}}] {{replyer}}<i class="fa fa-backward fa-spin"></i> {{replytext}}
-			<button class="btn btn-info modify" data-rno="{{rno}}" 
+           <li class="list-group-item">
+              [{{rno}}] {{replyer}}<i class="fa fa-backward fa-spin"></i> {{replytext}}
+			  <button class="btn btn-info modify" data-rno="{{rno}}" 
 										 	    data-bno="{{bno}}" 
-										 		data-replytext="{{replytext}}">
-					Modify
-			</button>
-         </li>
+										 		data-replytext="{{replytext}}"
+												data-toggle="modal"
+												data-target="#myModal"
+												>
+					  Modify
+			  </button>
+           </li>
          {{/each}}
       <ul>
    </script>
@@ -73,9 +94,20 @@
         	 var str = "rno = " +$(this).attr("data-rno");
         	 	 str += "bno = " +$(this).attr("data-bno"); 
         	 	 str += "replytext = " +$(this).attr("data-replytext"); 
-        	
-        	 	 alert(str);
-        	 	 
+        		
+//        	 	 alert(str);
+
+// 				 if(confirm(str)) 
+				 
+// 				 	alert("확인클릭");
+// 				 	 else 
+// 				 	alert("취소클릭");		
+				 
+// 				var text = prompt("댓글 수정 & 삭제", str);
+				
+// 				if(text!=null) 
+// 				 	alert(text);
+
 		});
          
       }
@@ -102,7 +134,6 @@
          
          $('#reply .panel-footer .pagination').html(str);
       }
-      
       
       function getPage(page) {
          $.getJSON("/replies/1/" + page + "?xxx=" + new Date().getTime(), function(result) {
@@ -137,8 +168,7 @@
                         replyer : replyer
                         
                      }),
-                     
-                     
+                    
                      success : function(result) {
                         console.log(result);
                         if(result == "SUCCESS"){

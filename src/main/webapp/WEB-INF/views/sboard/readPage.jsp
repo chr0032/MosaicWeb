@@ -3,12 +3,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>   
 <html>
+<link href="/resources/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <head>
 <title>readPage.jsp</title>
 	<script type="text/javascript" src="/resources/js/upload.js"></script>
-<!-- 	javascript 댓글관련 ↓  -->
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
+<!-- 	javascript, 파일 업로드,  댓글관련 ↓  -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
 	<!-- Main content -->	
 	<style type="text/css">
 	.popup {
@@ -45,28 +46,23 @@
     <div id="popup_front" class='popup front' style="display:none;">
      <img id="popup_img">
     </div>
-    
 <!-- 		조회 폼 관련 부분  -->
 	<div class="row">
 		<!-- left column -->
-		<div class="col-md-12">
+		<div class="col-md-6">
 			<!-- general form elements -->
 			<div class="box box-primary">
 				<div class="box-header">
 					<h3 class="box-title">READ BOARD</h3>
 				</div>
 				<!-- /.box-header -->
-
 				<form role="form" action="modifyPage" method="post">
-
-					<input type='hidden' name='bno' value="${boardVO.bno}"> <input
-						type='hidden' name='page' value="${cri.page}"> <input
-						type='hidden' name='perPageNum' value="${cri.perPageNum}">
+					<input type='hidden' name='bno' value="${boardVO.bno}"> 
+					<input type='hidden' name='page' value="${cri.page}"> 
+						<input type='hidden' name='perPageNum' value="${cri.perPageNum}">
 					<input type='hidden' name='searchType' value="${cri.searchType}">
 					<input type='hidden' name='keyword' value="${cri.keyword}">
-
 				</form>
-
 				<div class="box-body">
 					<div class="form-group">
 						<label for="exampleInputEmail1">Title</label> <input type="text"
@@ -85,13 +81,10 @@
 					</div>
 				</div>
 				<!-- /.box-body -->
-
 				<div class="box-footer">
-
 					<div>
 						<hr>
 					</div>
-
 					<ul class="mailbox-attachments clearfix uploadedList">
 					</ul>
 					<c:if test="${login.uid == boardVO.writer}">
@@ -101,40 +94,36 @@
 					<button type="submit" class="btn btn-primary" id="goListBtn">GO
 						LIST</button>
 				</div>
-
 			</div>
 			<!-- /.box -->
 		</div>
 		<!--/.col (left) -->
-
+	<div class="col-md-6">
+		<img class="img-responsive img-circle" style="width: 100%" alt="xxx" src="http://www.loremflickr.com/200/200/zombie"/>
+	</div>
 	</div>
 	<!-- /.row 댓글관련 부분-->
-
+	
+<!-- 	addreply 부분 ↓ -->
 	<div class="row">
 		<div class="col-md-12">
-
-
 			<div class="box box-success">
 				<div class="box-header">
 					<h3 class="box-title">ADD NEW REPLY</h3>
 				</div>
-
+<!-- 				로그인 상태!!!!!!!!!!!!!!!!!!!!!! -->
 				<c:if test="${not empty login}">
 					<div class="box-body">
-						<label for="exampleInputEmail1">Writer</label> <input
-							class="form-control" type="text" placeholder="USER ID"
-							id="newReplyWriter" value="${login.uid }" readonly="readonly">
-						<label for="exampleInputEmail1">Reply Text</label> <input
-							class="form-control" type="text" placeholder="REPLY TEXT"
-							id="newReplyText">
+						<label for="exampleInputEmail1">Writer</label> 
+						<input class="form-control" type="text" placeholder="USER ID" id="newReplyWriter" value="${login.uid }" readonly="readonly">
+						<label for="exampleInputEmail1">Reply Text</label> 
+						<input class="form-control" type="text" placeholder="REPLY TEXT" id="newReplyText">
 					</div>
-
 					<div class="box-footer">
-						<button type="submit" class="btn btn-primary" id="replyAddBtn">ADD
-							REPLY</button>
+						<button type="submit" class="btn btn-primary" id="replyAddBtn">ADD REPLY</button>
 					</div>
 				</c:if>
-
+<!-- 				로그아웃 상태!!!!!!!!!!!!!!!!!!!!!! -->
 				<c:if test="${empty login}">
 					<div class="box-body">
 						<div>
@@ -143,29 +132,23 @@
 					</div>
 				</c:if>
 			</div>
-
-
-
 			<!-- The time line -->
 			<ul class="timeline">
 				<!-- timeline time label -->
 				<li class="time-label" id="repliesDiv"><span class="bg-green">
-						Replies List <small id='replycntSmall'> [
-							${boardVO.replycnt} ] </small>
+						Replies List <small id='replycntSmall'> [${boardVO.replycnt} ] </small>
 				</span></li>
 			</ul>
-
 			<div class='text-center'>
 				<ul id="pagination" class="pagination pagination-sm no-margin ">
 
 				</ul>
 			</div>
-
 		</div>
 		<!-- /.col -->
 	</div>
 	<!-- /.row -->
-
+	
 	<!-- Modal 댓글 수정 알럿 창 관련 부분 ↓ --> 
 	<div id="modifyModal" class="modal modal-primary fade" role="dialog">
 		<div class="modal-dialog">
@@ -173,7 +156,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title"></h4>
+					<h4 class="modal-title">댓글 수정 & 삭제 </h4>
 				</div>
 				<div class="modal-body" data-rno>
 					<p>
@@ -189,9 +172,12 @@
 		</div>
 	</div>
 
+<!-- 다운로드를 위한 ↓ -->
 <script id="templateAttach" type="text/x-handlebars-template">
    <li data-src='{{fullName}}'>
- 	  <span class="mailbox-attachment-icon has-img"><img src="{{imgsrc}}" alt="Attachment"></span>
+ 	  <span class="mailbox-attachment-icon has-img">
+			<img src="{{imgsrc}}" alt="Attachment">
+      </span>
   	  <div class="mailbox-attachment-info">
 	     <a href="{{getLink}}" class="mailbox-attachment-name">{{fileName}}</a>
 	     </span>
@@ -199,8 +185,7 @@
     </li>                
 </script>  
 
-
-          
+<!-- 댓글 작성과 관련한 ↓ -->
 <script id="template" type="text/x-handlebars-template">
 	{{#each .}}
 	     <li class="replyLi" data-rno={{rno}}>
@@ -222,9 +207,7 @@
 </script>  
 
 <script>
-
 // 	댓글은 자바 스크립트로 진행  ↓
-
 	Handlebars.registerHelper("eqReplyer", function(replyer, block) {
 		var accum = '';
 		if (replyer == '${login.uid}') {
@@ -232,7 +215,6 @@
 		}
 		return accum;
 	});
-
 	Handlebars.registerHelper("prettifyDate", function(timeValue) {
 		var dateObj = new Date(timeValue);
 		var year = dateObj.getFullYear();
@@ -250,7 +232,9 @@
 		target.after(html);
 
 	}
-
+	
+// 	bno 기억함
+	
 	var bno = ${boardVO.bno};
 
 	var replyPage = 1;
@@ -259,7 +243,9 @@
 	function getPage(pageInfo) {
 
 		$.getJSON(pageInfo, function(data) {
+			// print body와 같은
 			printData(data.list, $("#repliesDiv"), $('#template'));
+			// print footer와 같은
 			printPaging(data.pageMaker, $(".pagination"));
 
 			$("#modifyModal").modal('hide');
@@ -292,7 +278,7 @@
 
 	$("#repliesDiv").on("click", function() {
 		
-		alert("repliesDiv clicked....");
+//		alert("repliesDiv clicked....");
 		
 		if ($(".timeline li").size() > 1) {
 			return;
@@ -315,7 +301,7 @@
 
 	$("#replyAddBtn").on("click", function() {
 		
-		alert("replyAddBtn clicked....");
+//		alert("replyAddBtn clicked....");
 		
 		var replyerObj = $("#newReplyWriter");
 		var replytextObj = $("#newReplyText");
@@ -327,9 +313,9 @@
 			url : '/replies/',
 			headers : {
 				"Content-Type" : "application/json",
-				"X-HTTP-Method-Override" : "POST"
+//				"X-HTTP-Method-Override" : "POST"
 			},
-			dataType : 'text',
+//			dataType : 'text',
 			data : JSON.stringify({
 				bno : bno,
 				replyer : replyer,
@@ -341,6 +327,7 @@
 					alert("등록 되었습니다.");
 					replyPage = 1;
 					getPage("/replies/" + bno + "/" + replyPage);
+					// 댓글 클리어 처리 ↓
 					replyerObj.val("");
 					replytextObj.val("");
 				}
