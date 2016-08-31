@@ -1,3 +1,9 @@
-push 오류 
+git push conflict 관련 오류
 
-1. git pull 로 다시 땡겨온다
+1. 수동 merge로 jsp 파일 수정 사항 처리 완료
+2. git status 
+3. git add *
+4. git status
+5. git commit -m "conflict resolve XXXX"
+6. git pull
+7. git push
