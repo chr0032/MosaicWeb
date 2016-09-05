@@ -7,3 +7,27 @@ mysql 터미널 진행 순서
 3. use world;
 
 4. source zerock_mysql.sql
+
+mysql 터미널 진행 순서2
+
+1. mysql -u zerock -p -h ec2
+
+2. password 입력
+
+3. use world;
+
+4. show tables;
+
+5. select @@autocommit;
+
+6. set autocommit=false;
+
+7. select tbl_reply;
+
+8. delete from tbl_reply;
+
+9. rollback;
+
+10. select tbl_reply;
+
+

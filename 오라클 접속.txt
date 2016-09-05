@@ -1,0 +1,13 @@
+sqlplus scott/tiger@rds/orcl
+select table_name from user_tables;
+select * from dept;
+insert into dept values(88, 'Tran', 'saction');
+select * from dept;
+rollback; (취소)
+select * from emp;
+insert into dept values(88, 'Tran', 'saction');
+update emp set deptno = 88 where empno=7934;
+select * from emp;
+commit; (영구저장, rollback해도 취소 안됨)
+update emp set deptno = 88;
+select * from emp;

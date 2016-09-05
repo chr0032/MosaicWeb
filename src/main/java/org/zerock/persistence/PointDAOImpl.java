@@ -24,7 +24,7 @@ public class PointDAOImpl implements PointDAO {
     paramMap.put("point", point);
 
     session.update(namespace + ".updatePoint", paramMap);
-
+    
   }
 
 }

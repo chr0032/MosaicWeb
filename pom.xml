@@ -30,12 +30,12 @@
             </exclusion>
          </exclusions>
       </dependency>
+      
       <dependency>
          <groupId>org.springframework</groupId>
          <artifactId>spring-webmvc</artifactId>
          <version>${org.springframework-version}</version>
       </dependency>
-
 
       <dependency>
          <groupId>org.springframework</groupId>
@@ -109,9 +109,8 @@
          <version>4.2</version>
       </dependency>
 
-
-
-      <!-- AspectJ -->
+      <!-- AspectJ Weaver -->
+      <!-- 실제 AOP 진행되는 곳 -->
       <dependency>
          <groupId>org.aspectj</groupId>
          <artifactId>aspectjrt</artifactId>
