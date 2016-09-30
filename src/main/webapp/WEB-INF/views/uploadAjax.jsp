@@ -90,50 +90,6 @@ small {
 				   }
 			   });
 		});
-		
-		
-/* 		
-$(".fileDrop").on("drop", function(event) {
-	event.preventDefault();
-	
-	var files = event.originalEvent.dataTransfer.files;
-	
-	var file = files[0];
-
-	//console.log(file);
-	var formData = new FormData();
-	
-	formData.append("file", file);
-
-	
-	$.ajax({
-		  url: '/uploadAjax',
-		  data: formData,
-		  dataType:'text',
-		  processData: false,
-		  contentType: false,
-		  type: 'POST',
-		  success: function(data){
-			  
-			  var str ="";
-			  
-			  console.log(data);
-			  console.log(checkImageType(data));
-			  
-			  if(checkImageType(data)){
-				  str ="<div><a href='displayFile?fileName="+getImageLink(data)+"'>"
-						  +"<img src='displayFile?fileName="+data+"'/></a>"
-						  +data +"</div>";
-			  }else{
-				  str = "<div><a href='displayFile?fileName="+data+"'>" 
-						  + getOriginalName(data)+"</a></div>";
-			  }
-			  
-			  $(".uploadedList").append(str);
-		  }
-		});			
-});	 */
-
 
 function getOriginalName(fileName){	
 
@@ -158,38 +114,6 @@ function getImageLink(fileName){
 	return front + end;
 	
 }
-
-
-
-
-/* 		$(".fileDrop").on("drop", function(event) {
-			event.preventDefault();
-			
-			var files = event.originalEvent.dataTransfer.files;
-			
-			var file = files[0];
-
-			//console.log(file);
-			var formData = new FormData();
-			
-			formData.append("file", file);
-			
-			$.ajax({
-				  url: '/uploadAjax',
-				  data: formData,
-				  dataType:'text',
-				  processData: false,
-				  contentType: false,
-				  type: 'POST',
-				  success: function(data){
-					 	
-					  alert(data);
-					 
-				  }
-				});
-			
-		}); */
-		
 
 	function checkImageType(fileName){
 		

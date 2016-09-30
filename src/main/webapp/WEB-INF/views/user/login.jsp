@@ -29,7 +29,6 @@
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
-
 <form action="/user/loginPost" method="post">
   <div class="form-group has-feedback">
     <input type="text" name="uid" class="form-control" placeholder="USER ID"/>
@@ -52,14 +51,10 @@
     </div><!-- /.col -->
   </div>
 </form>
-
-
         <a href="#">I forgot my password</a><br>
         <a href="register.html" class="text-center">Register a new membership</a>
-
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->
-
     <!-- jQuery 2.1.4 -->
     <script src="/resources/plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap 3.3.2 JS -->

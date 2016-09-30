@@ -29,21 +29,7 @@ public class UserController {
   public void loginGET(@ModelAttribute("dto") LoginDTO dto) {
 
   }
-
-  // @RequestMapping(value = "/loginPost", method = RequestMethod.POST)
-  // public void loginPOST(LoginDTO dto, HttpSession session, Model model)
-  // throws Exception {
-  //
-  // UserVO vo = service.login(dto);
-  //
-  // if (vo == null) {
-  // return;
-  // }
-  //
-  // model.addAttribute("userVO", vo);
-  //
-  // }
-
+  
   @RequestMapping(value = "/loginPost", method = RequestMethod.POST)
   public void loginPOST(LoginDTO dto, HttpSession session, Model model) throws Exception {
 

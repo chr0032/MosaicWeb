@@ -239,18 +239,6 @@
 
 					});
 				</script>
-
-
-
-
-
 			</div>
-			<!-- /.box -->
-		</div>
-		<!--/.col (left) -->
-
-	</div>
-	<!-- /.row -->
-
 </body>
 </html>
